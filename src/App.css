@@ -1,0 +1,77 @@
+.App {
+  padding: 24px 200px;
+  text-align: center;
+}
+
+.App-Search-Form{
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.App-Search-Query,.App-Dropdown{
+  height: 40px;
+  padding: 0 16px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  box-shadow: black 0px 0px 2px 0px;
+}
+
+.App-Submit{
+  margin-left: 8px;
+  box-shadow: black 0px 0px 2px 0px;
+  background: #AEE6E6;
+  height: 40px;
+  padding: 0 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.App-Submit:focus{
+  box-shadow: black 0px 0px 3px 0px;
+  transform: scale(1.05);
+}
+
+.recipe-grid{
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+@media screen and (max-width:900px){
+  .App{
+    padding: 24px 50px;
+  }
+  .recipe-grid{
+grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+@media screen and (max-width:520px){
+  .App{
+    padding: 24px 16px;
+  }
+  .App-Search-Form{
+    display: flex;
+    flex-direction: column;
+  }
+  .App-Search-Query,.App-Dropdown{
+    width: 80%;
+  }
+  .App-Submit{
+    margin-top: 16px;
+  }
+  .recipe-grid{
+    grid-template-columns: 1fr;
+  }
+}

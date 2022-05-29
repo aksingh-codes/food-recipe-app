@@ -1,0 +1,11 @@
+node_modules/
+
+build/
+
+.firebase/
+
+.firebaserc
+
+firebase.json
+
+.env
