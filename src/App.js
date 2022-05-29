@@ -4,7 +4,6 @@ import Axios from "axios";
 import RecipeCard from "./RecipeCard";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
   const APP_KEY = process.env.REACT_APP_KEY;
   const APP_ID = process.env.REACT.APP_ID;
   const [healthLabel, setHealthLabel] = useState("");
