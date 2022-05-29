@@ -5,7 +5,7 @@ import RecipeCard from "./RecipeCard";
 
 function App() {
   const APP_KEY = process.env.REACT_APP_KEY;
-  const APP_ID = process.env.REACT.APP_ID;
+  const APP_ID = process.env.REACT_APP_ID;
   const [healthLabel, setHealthLabel] = useState("");
   const [query, setQuery] = useState("");
   const [recipes, setRecipes] = useState([]);
