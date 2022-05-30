@@ -1,9 +1,22 @@
 .App {
   padding: 24px 200px;
   text-align: center;
+
+  /* background */
+  background: #a1ffce; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #faffd1,
+    #a1ffce
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #faffd1,
+    #a1ffce
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.App-Search-Form{
+.App-Search-Form {
   margin-top: 24px;
   display: flex;
   flex-direction: row;
@@ -12,7 +25,8 @@
   gap: 8px;
 }
 
-.App-Search-Query,.App-Dropdown{
+.App-Search-Query,
+.App-Dropdown {
   height: 40px;
   padding: 0 16px;
   font-size: 1rem;
@@ -23,10 +37,10 @@
   box-shadow: black 0px 0px 2px 0px;
 }
 
-.App-Submit{
+.App-Submit {
   margin-left: 8px;
   box-shadow: black 0px 0px 2px 0px;
-  background: #AEE6E6;
+  background: #aee6e6;
   height: 40px;
   padding: 0 16px;
   font-size: 1rem;
@@ -35,43 +49,47 @@
   cursor: pointer;
 }
 
-.App-Submit:focus{
+.App-Submit:focus {
   box-shadow: black 0px 0px 3px 0px;
   transform: scale(1.05);
 }
 
-.recipe-grid{
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+.recipe-grid {
+  margin: 50px auto 0;
+  max-width: 1024px;
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   gap: 2rem;
 }
 
-@media screen and (max-width:900px){
-  .App{
+@media screen and (max-width: 900px) {
+  .App {
     padding: 24px 50px;
   }
-  .recipe-grid{
-grid-template-columns: 1fr 1fr;
-  }
+  /* .recipe-grid {
+    grid-template-columns: 1fr 1fr;
+  } */
 }
 
-
-@media screen and (max-width:520px){
-  .App{
+@media screen and (max-width: 520px) {
+  .App {
     padding: 24px 16px;
   }
-  .App-Search-Form{
+  .App-Search-Form {
     display: flex;
     flex-direction: column;
   }
-  .App-Search-Query,.App-Dropdown{
+  .App-Search-Query,
+  .App-Dropdown {
     width: 80%;
   }
-  .App-Submit{
+  .App-Submit {
     margin-top: 16px;
   }
-  .recipe-grid{
+  /* .recipe-grid {
     grid-template-columns: 1fr;
-  }
+  } */
 }

@@ -1,24 +1,37 @@
-
-.recipe-card img{
-    width: 100%;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 4px;
+.recipe-card {
+  --shadow-key-umbra-opacity: 0.2;
+  --shadow-key-penumbra-opacity: 0.14;
+  --shadow-ambient-shadow-opacity: 0.12;
 }
 
-.recipe-card img:hover{
-    transform: translate(1.1);
+.recipe-card img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 4px;
 }
 
-.recipe-card{
-    border-radius: 4px;
-    border: 3px solid #000;
-    padding: 8px;
-    transition: ease-in-out;
-    cursor: pointer;
+.recipe-card img:hover {
+  transform: translate(1.1);
 }
-.recipe-card:hover{
-    background: #fff;
-    box-shadow: #000 0px 0px 4px 0px;
-    transform: scale(1.05);
+
+.recipe-card {
+  max-width: 300px;
+  min-width: 250px;
+  border-radius: 4px;
+  /* border: 1px solid hsla(0, 0%, 0%, 0.238); */
+  padding: 6px;
+  transition: ease-in-out;
+  cursor: pointer;
+  background: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, var(--shadow-key-penumbra-opacity)),
+    0 3px 1px -2px rgba(0, 0, 0, var(--shadow-key-umbra-opacity)),
+    0 1px 5px 0 rgba(0, 0, 0, var(--shadow-ambient-shadow-opacity));
+}
+.recipe-card:hover {
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, var(--shadow-key-penumbra-opacity)),
+    0 3px 14px 2px rgba(0, 0, 0, var(--shadow-ambient-shadow-opacity)),
+    0 5px 5px -3px rgba(0, 0, 0, var(--shadow-key-umbra-opacity));
+
+  /* transform: scale(1.05); */
 }

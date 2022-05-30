@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./App.css";
 import Axios from "axios";
 import RecipeCard from "./RecipeCard";
+import loader from "./assets/donut-load.gif";
+import tasty from "./assets/tasty.gif";
 
 function App() {
   const APP_KEY = process.env.REACT_APP_KEY;
@@ -9,6 +11,7 @@ function App() {
   const [healthLabel, setHealthLabel] = useState("");
   const [query, setQuery] = useState("");
   const [recipes, setRecipes] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   var url =
     healthLabel.length === 0
@@ -16,9 +19,11 @@ function App() {
       : `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&health=${healthLabel}`;
 
   async function getRecipes() {
+    setLoading(true);
     const result = await Axios.get(url);
     setRecipes(result.data.hits);
     console.log(result);
+    setLoading(false);
   }
 
   function handleSubmit(e) {
@@ -28,7 +33,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1 onClick={() => console.log(healthLabel)}>Food Recipe 🍛</h1>
+      <h1 style={{ cursor: "pointer" }} onClick={() => setRecipes([])}>
+        Food Recipe 🍛
+      </h1>
       <form className="App-Search-Form" onSubmit={handleSubmit}>
         <input
           className="App-Search-Query"
@@ -81,6 +88,42 @@ function App() {
 
         <input className="App-Submit" type="submit" value="Search" />
       </form>
+
+      {loading && (
+        <div
+          style={{
+            height: "calc(100vh - 150px)",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            rowGap: "24px",
+          }}
+        >
+          <img
+            style={{ maxWidth: "200px", width: "40%" }}
+            src={loader}
+            alt="loader"
+          ></img>
+
+          <p>Finding Your Recipes ...</p>
+        </div>
+      )}
+
+      {recipes.length === 0 && !loading && (
+        <div
+          style={{
+            height: "calc(100vh - 150px)",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <p>Search Recipes For Your Favourite Ingredients...😋</p>
+          <img style={{ maxWidth: "300px" }} src={tasty} alt="tasty"></img>
+        </div>
+      )}
       <div className="recipe-grid">
         {recipes.map((recipe, index) => {
           return <RecipeCard key={index} recipe={recipe} />;
