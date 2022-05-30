@@ -92,7 +92,7 @@ function App() {
       {loading && (
         <div
           style={{
-            height: "calc(100vh - 150px)",
+            marginTop: "54px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -113,7 +113,7 @@ function App() {
       {recipes.length === 0 && !loading && (
         <div
           style={{
-            height: "calc(100vh - 150px)",
+            marginTop: "54px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",

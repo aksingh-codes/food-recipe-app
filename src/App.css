@@ -1,19 +1,6 @@
 .App {
   padding: 24px 200px;
   text-align: center;
-
-  /* background */
-  background: #a1ffce; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #faffd1,
-    #a1ffce
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #faffd1,
-    #a1ffce
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .App-Search-Form {
